@@ -50,4 +50,5 @@ public class MoneyHistory implements Serializable {
      */
     @Column(name = "user_id")
     private Integer userId;
+
 }
