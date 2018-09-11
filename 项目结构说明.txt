@@ -1,0 +1,21 @@
+─src
+│  ├─main
+│  │  ├─java
+│  │  │  └─com
+│  │  │      └─airdrop
+│  │  │          ├─config				// 放一些配置文件
+│  │  │          │  ├─code					// 业务异常code
+│  │  │          │  ├─controller			// 统一异常捕捉管理
+│  │  │          │  ├─exception				// 自定义异常类
+│  │  │          │  └─security				// security安全框架配置
+│  │  │          ├─controller			// 暴露接口
+│  │  │          ├─dto					// 数据传输对象
+│  │  │          ├─entity				// 后台实体类
+│  │  │          ├─repository			// 后台dao层
+│  │  │          ├─service				// 业务处理层
+│  │  │          ├─util					// 工具类
+│  │  │          └─vo					// 值对象、视图对象
+│  │  └─resources
+│  │      ├─static
+│  │      └─templates
+│  └─
