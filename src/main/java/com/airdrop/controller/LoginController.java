@@ -4,6 +4,8 @@ import com.airdrop.config.code.CodeEnum;
 import com.airdrop.dto.UpdateDto;
 import com.airdrop.dto._ResultDto;
 import com.airdrop.service.UserService;
+import com.airdrop.util.SessionUtil;
+import com.airdrop.util.TokenUtil;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 /**
@@ -37,6 +40,18 @@ public class LoginController {
     @PostMapping("/login")
     public UpdateDto login(@RequestParam String username, @RequestParam String password, HttpSession session) {
         return userService.login(username, password, session);
+    }
+
+    @ApiOperation("账户注销登陆")
+    @PostMapping("/logout")
+    public _ResultDto logout(HttpServletRequest request) {
+        // 获得token
+        String token = request.getHeader(TokenUtil.TOKEN);
+        // 校验token是否有效
+        if (null != token && SessionUtil.checkUser(token, request.getSession())) {
+            request.getSession().removeAttribute(token);
+        }
+        return new _ResultDto();
     }
 
 }
