@@ -1,0 +1,33 @@
+JAVA 后端：
+    ─src
+    │  ├─main
+    │  │  ├─java
+    │  │  │  └─com
+    │  │  │      └─airdrop
+    │  │  │          ├─config				// 放一些配置文件
+    │  │  │          │  ├─code					// 业务异常code
+    │  │  │          │  ├─controller			// 统一异常捕捉管理
+    │  │  │          │  ├─exception				// 自定义异常类
+    │  │  │          │  └─security				// security安全框架配置
+    │  │  │          ├─controller			// 暴露接口
+    │  │  │          ├─dto					// 数据传输对象
+    │  │  │          ├─entity				// 后台实体类
+    │  │  │          ├─repository			// 后台dao层
+    │  │  │          ├─service				// 业务处理层
+    │  │  │          ├─util					// 工具类
+    │  │  │          └─vo					// 值对象、视图对象
+    │  │  └─resources
+    │  │      ├─static
+    │  │      └─templates
+    │  └─
+
+数据库：
+
+    t_user  // 用户表
+    t_money_history // 余额历史表
+
+    // 权限表
+    t_role  // 角色表
+    t_user_role // 用户角色关联表
+    t_privileges    // 权限表
+    t_role_privileges   // 角色权限关联表
